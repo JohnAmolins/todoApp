@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/*-----BACKGROUND-----*/
 body {
   background: #141e30; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -22,18 +23,41 @@ body {
   min-height: 100vh; /* min hight of the body*/
 }
 
+/*-----TITLE-----*/
 header {
   font-size: 2rem;
   letter-spacing: 4px;
+  
 }
 
+/*-----COUNTERS-----*/
 header,
-form, .todo-nr , .todo-nr2{
-  min-height: 20vh;
+form{ 
+  min-height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/*-----COUNTERS-----*/
+.todo-nr , .todo-nr2{
+border: greenyellow 1px solid;
+border-radius: 25px;
+margin: 0.5rem;
+width: 15rem;
+display: flex;
+justify-content: center;
+min-height: 5vh;
+}
+
+.counters{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 
 /* -----FORM STYLING-----*/
 form input,
@@ -48,10 +72,9 @@ form button {
 form button {
   cursor: pointer;
   color: white;
-  border: none;
   transition: all 0.3s ease;
   background: none;
-  padding-left: 20px;
+  padding-left: 1rem;
 }
 
 form button:hover{
@@ -72,19 +95,24 @@ form button:hover{
 
 .todo {
   margin: 0.5rem;
-  background: white;
+  background: rgb(255, 255, 255);
   color: black;
   font-size: 1.5rem;
   display: flex; /*all items jump next to each other*/
   justify-content: space-between;
   align-items: center;
+  transition: all 1s ease;
+}
+
+.filter-todo {
+  padding: 1rem;
 }
 
 .todo li {
   flex: 1;
 }
 
-.delete-btn,
+.trash-btn,
 .complete-btn {
   background: #243b55;
   padding: 1rem;
@@ -93,12 +121,8 @@ form button:hover{
   font-size: 1rem;
   color: rgb(247, 66, 66);
 }
-
-
 .complete-btn {
   color: greenyellow;
-  
-  
 }
 
 .todo-item{
@@ -110,7 +134,53 @@ form button:hover{
   pointer-events: none; /* removes clicking from 'icon'*/
 }
 
+.fall {
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
 .completed {
   background-color: greenyellow;
   transition: 0.3s ease;
 }
+
+
+/*-----FILTER STYLING-----*/
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select{
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+select{
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+
+}
+
+.select::after{
+  content: "\25BC";
+  color: #141e30;
+  position: absolute;
+  background: #243b55;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+
+  
+}
+
+
+
+
