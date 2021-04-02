@@ -27,7 +27,7 @@ function addTodo(e) {
   newTodo.classList.add(`todo-item`); // adding class="todo-item" to the generated <li>
   todoDiv.appendChild(newTodo); // stick <li> to <div>
   todoInput.value = "";
-  todoNr.innerText = items.length+1; // get the count of total tasks
+  todoNr.innerText = items.length + 1; // get the count of total tasks
 
   const completedButton = document.createElement(`button`); // adding 'complete task button'
   completedButton.innerHTML = `<i class="fas fa-check"></i>`; // insert <i> tag each time for new generated task - to be able to have 'check' icon
@@ -49,7 +49,7 @@ function deleteTodo(e) {
     // if User clicked on 'delete' button which is first(0) class name
     const todo = item.parentElement; // create variable 'item' which stores User target and assign it to parent element - this case to <div> that holds the whole task
     todo.classList.add("fall");
-    todo.addEventListener("transitionend", e => {
+    todo.addEventListener("transitionend", (e) => {
       todo.remove();
     });
     counter++;
@@ -63,13 +63,13 @@ function deleteTodo(e) {
 }
 
 /* this need to be updated -> need to delete value*/
-function deleteCounter(){
-todoNr2.innerHTML = '';
+function deleteCounter() {
+  todoNr2.innerHTML = "";
 }
 
 function filterTodo(e) {
   const todos = todoList.childNodes; // gets all the tasks
-  todos.forEach(function(todo) {
+  todos.forEach(function (todo) {
     switch (e.target.value) {
       case "all":
         todo.style.display = "flex";
@@ -82,12 +82,12 @@ function filterTodo(e) {
         }
         break;
       case "uncompleted":
-          if(!todo.classList.contains("completed")){
-            todo.style.display = "flex";
-          }else {
-            todo.style.display = "none";
-          }
-          break;
+        if (!todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
     }
   });
 }
