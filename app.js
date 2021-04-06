@@ -19,12 +19,13 @@ filterOption.addEventListener(`click`, filterTodo);
 //Functions
 function addTodo(e) {
   e.preventDefault(); // stop browser refresh
+      const todoDiv = document.createElement(`div`); // creating <div> element for new task
   if (todoInput.value === "") {
     alertMsg.style.display = "flex";
     todoDiv.style.display = "none";
   } else {
     alertMsg.style.display = "none";
-    const todoDiv = document.createElement(`div`); // creating <div> element for new task
+
     todoDiv.classList.add(`todo`); // adding class="todo" to the generated <div>
 
     const newTodo = document.createElement(`li`); // adding <li> element to HTML

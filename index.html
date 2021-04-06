@@ -14,6 +14,8 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,38 +28,63 @@
   </head>
 
   <body>
-    <header>Create New Task</header>
+    <div class="container">
+      <header class="justify-content-center align-items-center text-center">Create New Task</header>
 
-    <div class="counters">
-      <h2 class="todo-active">Active tasks:<b></b></h2>
-      <h2 class="todo-deleted">Deleted tasks:<b></b></h2>
-    </div>
-    <form>
-      <input
-        type="text"
-        class="todo-input"
-        placeholder="Task title"
-        style="text-align: center; size: 14px"
-      />
-      <button class="todo-button" type="submit">
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="select">
-        <select name="todos" class="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
-      <div class="reset">
-        <button class="reset-counter" type="submit">Reset Tasks</button>
-      </div>
-    </form>
-    <p class="err text-danger text-center hidden"><i class="fa fa-warning"></i> <b>Please enter a new task!</b></p>
+      <div class="row">
+        
+          <div class="counters d-flex flex-column flex-lg-row justify-content-center align-items-center text-center">
+          
+              <h2 class="todo-active">Active tasks:<b></b></h2>
+            
+              <h2 class="todo-deleted">Deleted tasks:<b></b></h2>
+            
+            </div>  
+          
 
-    <div class="todo-container">
-      <ul class="todo-list"></ul>
-    </div>
+      </div>
+
+      <form>
+        <div class="row">
+          <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center text-center">
+            <input type="text" class="todo-input col-6 col-sm-6 col-md-4 col-lg-2" placeholder="Task title" style="text-align: center; size: 14px"/>
+            <button class="todo-button" type="submit">
+              <i class="fas fa-plus"></i>
+            </button>
+
+        <div class="select">
+          <select name="todos" class="filter-todo">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
+        </div>
+        <div class="reset">
+          <button class="reset-counter" type="submit">Reset Tasks</button>
+        </div>
+
+          </div>
+        </div>
+      </form>
+
+      <p class="err text-danger text-center hidden">
+        <i class="fa fa-warning"></i> <b>Please enter a new task!</b>
+      </p>
+
+      <div class="row">
+        <div class="col-md-12 d-flex flex-column flex-lg-row justify-content-center align-items-center text-center">
+          <div class="todo-container">
+            <ul class="todo-list "></ul>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
     <script src="./app.js"></script>
   </body>
 </html>
